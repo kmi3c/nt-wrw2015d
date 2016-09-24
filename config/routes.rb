@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root 'visitors#index'
   devise_for :users
-  resources :students do
+  resources :students, :teachers do
     get :subjects
   end
-  resources :teachers
   get '/reports/subjects', to: 'reports#subjects', as: :report_subjects
 end

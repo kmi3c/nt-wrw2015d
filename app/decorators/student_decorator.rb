@@ -7,7 +7,7 @@ class StudentDecorator < BaseDecorator
   def avg_notes(subject_item)
     notes =  subject_item_notes.for_subject_item(subject_item)
     if notes.count > 0
-      number_with_precision( notes.average(:value), precision: 2 )
+      number_with_precision( notes.average(:value), precision: 2 ).to_s
     else
      '0.00'
     end
