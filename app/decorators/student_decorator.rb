@@ -3,7 +3,9 @@ class StudentDecorator < BaseDecorator
   def full_name
     "#{first_name} #{last_name}"
   end
-
+  def format_birthday
+    birthday.strftime('%Y-%m_%d') unless birthday.nil?
+  end
   def avg_notes(subject_item)
     notes =  subject_item_notes.for_subject_item(subject_item)
     if notes.count > 0
